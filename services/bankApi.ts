@@ -1,5 +1,5 @@
 import { RateData } from '../types';
-import { formatDateForDisplay } from '../utils/dateUtils';
+import { formatDateForDisplay, getTodayString } from '../utils/dateUtils';
 
 // Naver finance scrape (proxied to avoid CORS)
 const CURRENCIES = [
@@ -13,6 +13,7 @@ const CURRENCIES = [
 const NAVER_PROXY_BASE = (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_NAVER_PROXY_BASE) || '/api/naver';
 const MAX_PAGES = 12; // safety cap
 const DAYS_BACK = 90; // ~3 months
+const CACHE_KEY = 'naver_fx_cache_v1';
 
 const decodeEucKr = async (response: Response) => {
     const buf = await response.arrayBuffer();
@@ -71,6 +72,21 @@ const parseTable = (html: string, currencyCode: string, currencyName: string, co
 };
 
 export const fetchBankRates = async (): Promise<RateData[]> => {
+    const today = formatDateForDisplay(getTodayString());
+
+    const cachedRaw = localStorage.getItem(CACHE_KEY);
+    const cachedByCurrency: Record<string, RateData[]> = cachedRaw ? JSON.parse(cachedRaw) : {};
+
+    const saveCache = (data: Record<string, RateData[]>) => {
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+    };
+
+    const upsert = (list: RateData[], item: RateData) => {
+        const idx = list.findIndex(r => r.id === item.id);
+        if (idx >= 0) list[idx] = item;
+        else list.push(item);
+    };
+
     const cutoff = (() => {
         const d = new Date();
         d.setDate(d.getDate() - DAYS_BACK);
@@ -79,36 +95,55 @@ export const fetchBankRates = async (): Promise<RateData[]> => {
     })();
 
     const fetchCurrency = async (c: typeof CURRENCIES[number]) => {
-        let page = 1;
-        const collected: RateData[] = [];
-        let done = false;
+        const cached = cachedByCurrency[c.code] || [];
+        const cachedPast = cached.filter(r => r.date !== today);
+        const collected: RateData[] = [...cachedPast];
 
-        while (!done && page <= MAX_PAGES) {
-            const url = `${NAVER_PROXY_BASE}/marketindex/exchangeDailyQuote.naver?marketindexCd=${c.marketIndexCd}&page=${page}`;
+        const needsFullFetch = cachedPast.length === 0;
+
+        if (needsFullFetch) {
+            let page = 1;
+            let done = false;
+            while (!done && page <= MAX_PAGES) {
+                const url = `${NAVER_PROXY_BASE}/marketindex/exchangeDailyQuote.naver?marketindexCd=${c.marketIndexCd}&page=${page}`;
+                const res = await fetch(url);
+                if (!res.ok) throw new Error(`Naver fetch failed for ${c.code} page ${page}: ${res.status}`);
+                const html = await decodeEucKr(res);
+                const rates = parseTable(html, c.code, c.name, c.country);
+                if (rates.length === 0) break;
+
+                const filtered = rates.filter(r => {
+                    const d = new Date(r.date);
+                    return d >= cutoff;
+                });
+                filtered.forEach(r => upsert(collected, r));
+
+                const oldest = rates[rates.length - 1];
+                const oldestDate = new Date(oldest.date);
+                if (oldestDate < cutoff) {
+                    done = true;
+                } else {
+                    page += 1;
+                }
+            }
+        } else {
+            // Only fetch first page for today to refresh latest
+            const url = `${NAVER_PROXY_BASE}/marketindex/exchangeDailyQuote.naver?marketindexCd=${c.marketIndexCd}&page=1`;
             const res = await fetch(url);
-            if (!res.ok) throw new Error(`Naver fetch failed for ${c.code} page ${page}: ${res.status}`);
+            if (!res.ok) throw new Error(`Naver fetch failed for ${c.code} page 1: ${res.status}`);
             const html = await decodeEucKr(res);
             const rates = parseTable(html, c.code, c.name, c.country);
-            if (rates.length === 0) break;
-
-            const filtered = rates.filter(r => {
-                const d = new Date(r.date);
-                return d >= cutoff;
-            });
-            collected.push(...filtered);
-
-            const oldest = rates[rates.length - 1];
-            const oldestDate = new Date(oldest.date);
-            if (oldestDate < cutoff) {
-                done = true;
-            } else {
-                page += 1;
-            }
+            rates.forEach(r => upsert(collected, r));
         }
+
+        // Save back cache without today's data (only past dates)
+        cachedByCurrency[c.code] = collected.filter(r => r.date !== today);
 
         return collected;
     };
 
     const results = await Promise.all(CURRENCIES.map(fetchCurrency));
+    saveCache(cachedByCurrency);
+
     return results.flat();
 };
