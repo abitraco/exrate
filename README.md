@@ -12,16 +12,16 @@ npm install
 npm run dev
 ```
 
-## Bank API configuration
+## Bank API configuration (NH Open API)
 - Endpoint: `https://developers.nonghyup.com/InquireExchangeRate.nh`
-- Required fields when calling:
-  - `Iscd` (institution code) **must use your issued value**
-  - `AccessToken` **must use your issued value**
-- Sample AccessToken currently in code (for testing):\
-  `cb0c9226c6d3bbd3c05529531ba7ce740bfd03709feb9583c8158737b053a916`
 - API guide: https://developers.nonghyup.com/guide/GU_1000
+- Set these environment variables (Vercel project settings or `.env`):
+  - `VITE_NH_ISCD` (required)
+  - `VITE_NH_ACCESS_TOKEN` (required)
+  - `VITE_NH_FINTECH_APSNO` (default: `001`)
+  - `VITE_NH_API_SVC_CD` (default: `DrawingTransferA`)
+- Optional: `VITE_ALLOW_MOCK=true` to show mock data when API is unavailable (defaults to on in dev).
 
 ## Notes
 - No customs API calls remain in the codebase.
-- If the NH API call fails, the UI falls back to mock data for demo purposes.
-
+- If the NH API call fails and mock fallback is allowed, demo data will show; set the required env vars in production to see live rates.

@@ -1,15 +1,20 @@
 import { RateData, BankRateResponse } from '../types';
 import { formatDateForDisplay } from '../utils/dateUtils';
 
-// Replace these with your own issued credentials before real API calls.
-const ACCESS_TOKEN = 'cb0c9226c6d3bbd3c05529531ba7ce740bfd03709feb9583c8158737b053a916';
-const ISCD = '000013'; // Sample institution code
-const FINTECH_APSNO = '001'; // From example
-const API_SVC_CD = 'DrawingTransferA'; // From example
+// NH Open API credentials: set these in Vercel/localhost for real data
+// @ts-ignore import.meta is defined in Vite runtime
+const env = (typeof import.meta !== 'undefined' && (import.meta as any).env) || (typeof process !== 'undefined' ? process.env : {});
+const ACCESS_TOKEN = String(env.VITE_NH_ACCESS_TOKEN || env.REACT_APP_NH_ACCESS_TOKEN || '').trim();
+const ISCD = String(env.VITE_NH_ISCD || env.REACT_APP_NH_ISCD || '').trim();
+const FINTECH_APSNO = String(env.VITE_NH_FINTECH_APSNO || env.REACT_APP_NH_FINTECH_APSNO || '001').trim();
+const API_SVC_CD = String(env.VITE_NH_API_SVC_CD || env.REACT_APP_NH_API_SVC_CD || 'DrawingTransferA').trim();
+const ALLOW_MOCK = Boolean(env.DEV || env.VITE_ALLOW_MOCK === 'true' || env.REACT_APP_ALLOW_MOCK === 'true');
 
 const TARGET_CURRENCIES = ['USD', 'EUR', 'CNY', 'JPY'];
-
 const CACHE_PREFIX = 'bank_rate_v1_';
+
+const hasCredentials = () => Boolean(ACCESS_TOKEN && ISCD);
+const getErrMsg = (json: BankRateResponse) => json.Header['Rsms '] || (json as any).Header?.Rsms || 'Unknown error';
 
 // Helper to generate random IsTuno
 const generateIsTuno = () => {
@@ -35,6 +40,11 @@ const getTimeString = () => {
 };
 
 export const fetchBankRates = async (date: string): Promise<RateData[]> => {
+    if (!hasCredentials()) {
+        console.warn('[BankAPI] Missing ISCD/AccessToken. Set VITE_NH_ISCD and VITE_NH_ACCESS_TOKEN for live data.');
+        return ALLOW_MOCK ? generateMockBankData(date.replace(/-/g, '')) : [];
+    }
+
     const cleanDate = date.replace(/-/g, '');
     const formattedDateForDisplay = formatDateForDisplay(cleanDate);
 
@@ -46,19 +56,16 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
 
     if (cached) {
         const { data, timestamp } = JSON.parse(cached);
-        // 과거 데이터는 항상 캐시 사용 (API 호출 절약)
         if (!isToday) {
             console.log(`[Cache] Using cached data for ${cleanDate}`);
             return data;
         }
-        // 오늘 데이터는 1시간 이내면 캐시 사용
         if (now.getTime() - timestamp < 3600000) {
             console.log(`[Cache] Using cached data for today (${cleanDate})`);
             return data;
         }
         console.log(`[API] Cache expired for today, fetching new data...`);
     } else if (!isToday) {
-        // 과거 데이터인데 캐시가 없으면 API 호출
         console.log(`[API] No cache for past date ${cleanDate}, fetching...`);
     } else {
         console.log(`[API] No cache for today ${cleanDate}, fetching...`);
@@ -77,13 +84,13 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
                 IsTuno: generateIsTuno(),
                 AccessToken: ACCESS_TOKEN
             },
-            Btb: "0001", // Branch code? Assuming 0001 from example
+            Btb: "0001",
             Crcd: currency,
             Inymd: cleanDate
         };
 
         try {
-            const response = await fetch('https://nhopenapi.nonghyup.com/svcapi/InquireExchangeRate.nh', {
+            const response = await fetch('https://developers.nonghyup.com/InquireExchangeRate.nh', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -98,7 +105,7 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
             const json: BankRateResponse = await response.json();
 
             if (json.Header.Rpcd !== '00000') {
-                console.warn(`API Error for ${currency}: ${json.Header["Rsms "]}`);
+                console.warn(`API Error for ${currency}: ${getErrMsg(json)}`);
                 return null;
             }
 
@@ -109,7 +116,7 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
                     countryCode: getCountryCode(currency),
                     currencyName: getCurrencyName(currency),
                     currencyCode: currency,
-                    rate: parseFloat(rec.BrgnBsrt), // Using Base Rate as primary
+                    rate: parseFloat(rec.BrgnBsrt), // Base Rate
                     date: formattedDateForDisplay,
                     type: 'bank',
                     cashBuy: parseFloat(rec.CshBnrt),
@@ -129,7 +136,6 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
     const fetchedResults = await Promise.all(fetchPromises);
     const validResults = fetchedResults.filter((r): r is RateData => r !== null);
 
-    // If we got data, save to cache (영구 저장)
     if (validResults.length > 0) {
         console.log(`[API] Successfully fetched ${validResults.length} rates for ${cleanDate}, saving to cache...`);
         localStorage.setItem(cacheKey, JSON.stringify({
@@ -138,17 +144,19 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
         }));
         return validResults;
     } else {
-        // API 실패 시 Mock 데이터 사용 (CORS 또는 API 오류)
-        console.warn(`[Mock] API failed for ${cleanDate}, using mock data`);
-        const mockData = generateMockBankData(cleanDate);
-        // Mock 데이터도 캐시에 저장 (과거 데이터는 영구 저장)
-        if (!isToday) {
-            localStorage.setItem(cacheKey, JSON.stringify({
-                data: mockData,
-                timestamp: now.getTime()
-            }));
+        if (ALLOW_MOCK) {
+            console.warn(`[Mock] API failed for ${cleanDate}, using mock data`);
+            const mockData = generateMockBankData(cleanDate);
+            if (!isToday) {
+                localStorage.setItem(cacheKey, JSON.stringify({
+                    data: mockData,
+                    timestamp: now.getTime()
+                }));
+            }
+            return mockData;
         }
-        return mockData;
+        console.warn(`[API] No data and mock disabled for ${cleanDate}`);
+        return [];
     }
 };
 
