@@ -17,14 +17,20 @@ const hasCredentials = () => Boolean(ACCESS_TOKEN && ISCD);
 const getErrMsg = (json: BankRateResponse) => json.Header['Rsms '] || (json as any).Header?.Rsms || 'Unknown error';
 
 // Helper to generate random IsTuno
+const getKstNow = () => {
+    const now = new Date();
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    return new Date(utc + 9 * 60 * 60 * 1000);
+};
+
 const generateIsTuno = () => {
-    const timestamp = new Date().toISOString().replace(/[-T:.Z]/g, '').slice(0, 14); // YYYYMMDDHHMMSS
+    const timestamp = getKstNow().toISOString().replace(/[-T:.Z]/g, '').slice(0, 14); // YYYYMMDDHHMMSS in KST
     const random = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
     return `${timestamp}${random}`.slice(0, 20);
 };
 
 const getTodayString = () => {
-    const now = new Date();
+    const now = getKstNow();
     const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
@@ -32,7 +38,7 @@ const getTodayString = () => {
 };
 
 const getTimeString = () => {
-    const now = new Date();
+    const now = getKstNow();
     const hour = String(now.getHours()).padStart(2, '0');
     const minute = String(now.getMinutes()).padStart(2, '0');
     const second = String(now.getSeconds()).padStart(2, '0');
@@ -51,7 +57,7 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
     const cacheKey = `${CACHE_PREFIX}${cleanDate}`;
     const cached = localStorage.getItem(cacheKey);
 
-    const now = new Date();
+    const now = getKstNow();
     const isToday = cleanDate === getTodayString();
 
     if (cached) {
