@@ -76,8 +76,8 @@ const RateChart: React.FC<RateChartProps> = ({ data, isLoading, title, currencie
                                 dataKey={curr.key} 
                                 stroke={curr.color} 
                                 strokeWidth={3} 
-                                dot={{ r: 4, strokeWidth: 2, fill: '#fff' }} 
-                                activeDot={{ r: 7, strokeWidth: 0 }}
+                                dot={false}
+                                activeDot={{ r: 4, strokeWidth: 0 }}
                                 animationDuration={1000}
                             />
                         ))}
