@@ -1,9 +1,9 @@
 import { RateData, BankRateResponse } from '../types';
 import { formatDateForDisplay } from '../utils/dateUtils';
 
-// Constants from User
+// Replace these with your own issued credentials before real API calls.
 const ACCESS_TOKEN = 'cb0c9226c6d3bbd3c05529531ba7ce740bfd03709feb9583c8158737b053a916';
-const ISCD = '000013'; // From example
+const ISCD = '000013'; // Sample institution code
 const FINTECH_APSNO = '001'; // From example
 const API_SVC_CD = 'DrawingTransferA'; // From example
 

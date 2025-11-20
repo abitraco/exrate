@@ -1,92 +1,26 @@
-# 🇰🇷 과세환율 대시보드 (Korea Customs FX Rate Dashboard)
+# Bank Exchange Rate Dashboard
 
-이 프로젝트는 대한민국 관세청 공공데이터 API를 활용하여 매주 변동되는 과세환율(수출/수입) 정보를 시각적으로 보여주는 웹 애플리케이션입니다.
+This app shows daily bank exchange rates (USD, EUR, CNY, JPY) fetched from the NH Open API. Customs data and related APIs have been removed; only bank rates remain.
 
-## ✨ 주요 기능
-
-*   **주간 환율 조회:** 매주 갱신되는 과세환율 정보를 확인할 수 있습니다.
-*   **변동 추이 그래프:** 주요 통화(USD, EUR, CNY, JPY)의 최근 12주간 환율 변동을 그래프로 제공합니다.
-*   **다국어 지원:** 한국어(KO) 및 영어(EN) 인터페이스를 지원합니다.
-*   **반응형 디자인:** 데스크탑 및 모바일 환경에 최적화되어 있습니다.
-*   **자동 갱신:** 매주 금요일 17시 이후, 다음 주 고시 환율이 발표되면 자동으로 감지하여 업데이트합니다.
-*   **CORS 해결:** 로컬 개발 환경 및 Vercel 배포 환경에서의 CORS 이슈를 Proxy 설정으로 해결했습니다.
-
----
-
-## 🔑 API 키 설정 가이드 (필수)
-
-이 프로젝트는 **공공데이터포털**의 API 키가 필요합니다.
-
-### 1. 로컬 개발 환경 설정 (.env)
-프로젝트 루트 경로에 `.env` 파일을 생성하고 아래와 같이 키를 설정합니다.
-
-```bash
-# .env 파일 내용
-VITE_SERVICE_KEY=wRM5sZq+HDk3K7ACf2ooOFDs5VnxITSoBnufB8MTSCc2mr7X5op+tP5N4APOXmSV8r5oPbJykzq9q4/fcplQFQ==
-```
-
-> ⚠️ **주의:** `.env` 파일은 개인 API 키가 포함되어 있으므로 **GitHub 저장소에 업로드되지 않도록 주의하세요.** (`.gitignore`에 이미 포함되어 있습니다.)
-
----
-
-## 🚀 설치 및 실행
-
-### 사전 요구사항
-*   Node.js (v14 이상 권장)
-*   npm 또는 yarn
-
-### 설치
+## Setup
+1) Install dependencies:
 ```bash
 npm install
-# 또는
-yarn install
 ```
-
-### 개발 서버 실행
+2) Run locally:
 ```bash
 npm run dev
-# 또는
-yarn dev
-```
-브라우저에서 `http://localhost:5173` (또는 터미널에 표시된 주소)으로 접속합니다.
-
----
-
-## 🌐 배포 가이드 (Vercel)
-
-이 프로젝트는 `vercel.json`을 통해 API 프록시가 설정되어 있어 **Vercel** 배포에 최적화되어 있습니다.
-
-1.  **GitHub**에 코드를 푸시합니다.
-2.  **Vercel** 대시보드에서 해당 저장소를 Import 합니다.
-3.  **Environment Variables** 설정 단계에서 아래 키를 추가합니다.
-    *   **Key:** `VITE_SERVICE_KEY`
-    *   **Value:** (공공데이터포털 Decoding 인증키 값)
-4.  **Deploy**를 클릭하면 배포가 완료됩니다.
-
-### Vercel Proxy 설정 (`vercel.json`)
-공공데이터포털 API의 CORS 문제를 해결하기 위해 배포 시 `/api/customs` 경로로 요청을 우회하도록 설정되어 있습니다.
-
-```json
-{
-  "rewrites": [
-    {
-      "source": "/api/customs/:path*",
-      "destination": "https://apis.data.go.kr/1220000/retrieveTrifFxrtInfo/getRetrieveTrifFxrtInfo?serviceKey=:path*"
-    }
-  ]
-}
 ```
 
----
+## Bank API configuration
+- Endpoint: `https://developers.nonghyup.com/InquireExchangeRate.nh`
+- Required fields when calling:
+  - `Iscd` (institution code) **must use your issued value**
+  - `AccessToken` **must use your issued value**
+- Sample AccessToken currently in code (for testing):\
+  `cb0c9226c6d3bbd3c05529531ba7ce740bfd03709feb9583c8158737b053a916`
+- API guide: https://developers.nonghyup.com/guide/GU_1000
 
-## 🛠 기술 스택
-*   **Framework:** React (TypeScript), Vite
-*   **Styling:** Tailwind CSS
-*   **Charting:** Recharts
-*   **Icons:** Lucide React
-*   **Data Source:** 관세청 유니패스 (공공데이터포털)
-
----
-
-## 📝 라이선스
-이 프로젝트는 개인 학습 및 정보 제공 목적으로 제작되었습니다. 데이터의 정확성은 보장하지 않으며, 실제 통관 업무 시에는 [관세청 유니패스](https://unipass.customs.go.kr/)를 참고하시기 바랍니다.
+## Notes
+- No customs API calls remain in the codebase.
+- If the NH API call fails, the UI falls back to mock data for demo purposes.
