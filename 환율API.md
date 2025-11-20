@@ -5,6 +5,11 @@
   - `Iscd`: your institution code (replace the sample)
   - `AccessToken`: your issued token (replace the sample)
 - API guide: https://developers.nonghyup.com/guide/GU_1000
+- Env variables (set in Vercel or `.env`):
+  - `VITE_NH_ISCD` (required)
+  - `VITE_NH_ACCESS_TOKEN` (required)
+  - `VITE_NH_FINTECH_APSNO` (default `001`)
+  - `VITE_NH_API_SVC_CD` (default `DrawingTransferA`)
 
 ## Sample request body
 ```json
