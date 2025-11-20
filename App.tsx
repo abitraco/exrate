@@ -13,7 +13,7 @@ const TRANSLATIONS = {
   KO: {
     header: { title: '은행 고시 환율', import: '수입', export: '수출' },
     table: {
-      title: '환율 목록',
+      title: '환율목록',
       searchPlaceholder: '통화 검색...',
       country: '국가/부호',
       currency: '통화명',
