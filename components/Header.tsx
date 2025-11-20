@@ -57,12 +57,12 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                         <div className="hidden md:block h-6 w-px bg-gray-200 mx-2"></div>
 
                         <a
-                            href="https://developers.nonghyup.com/"
+                            href="https://customsrate.abitra.co/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap"
                         >
-                            NH Open API
+                            과세환율보기
                         </a>
 
                         {!hideTypeToggle && (
