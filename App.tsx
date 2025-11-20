@@ -138,6 +138,7 @@ const App: React.FC = () => {
         point[item.currencyCode] = item.rate; // Using Base Rate
       }
     });
+    // 과거(좌) → 최신(우) 순서로 정렬
     return Array.from(dataByDate.values()).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   }, [allData]);
 

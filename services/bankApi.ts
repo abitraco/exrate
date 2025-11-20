@@ -46,14 +46,22 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
 
     if (cached) {
         const { data, timestamp } = JSON.parse(cached);
-        // If today, check if older than 1 hour (3600000 ms)
-        if (isToday) {
-            if (now.getTime() - timestamp < 3600000) {
-                return data;
-            }
-        } else {
+        // 과거 데이터는 항상 캐시 사용 (API 호출 절약)
+        if (!isToday) {
+            console.log(`[Cache] Using cached data for ${cleanDate}`);
             return data;
         }
+        // 오늘 데이터는 1시간 이내면 캐시 사용
+        if (now.getTime() - timestamp < 3600000) {
+            console.log(`[Cache] Using cached data for today (${cleanDate})`);
+            return data;
+        }
+        console.log(`[API] Cache expired for today, fetching new data...`);
+    } else if (!isToday) {
+        // 과거 데이터인데 캐시가 없으면 API 호출
+        console.log(`[API] No cache for past date ${cleanDate}, fetching...`);
+    } else {
+        console.log(`[API] No cache for today ${cleanDate}, fetching...`);
     }
 
     // Fetch from API
@@ -121,15 +129,26 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
     const fetchedResults = await Promise.all(fetchPromises);
     const validResults = fetchedResults.filter((r): r is RateData => r !== null);
 
-    // If we got data, save to cache
+    // If we got data, save to cache (영구 저장)
     if (validResults.length > 0) {
+        console.log(`[API] Successfully fetched ${validResults.length} rates for ${cleanDate}, saving to cache...`);
         localStorage.setItem(cacheKey, JSON.stringify({
             data: validResults,
             timestamp: now.getTime()
         }));
         return validResults;
     } else {
-        return generateMockBankData(cleanDate);
+        // API 실패 시 Mock 데이터 사용 (CORS 또는 API 오류)
+        console.warn(`[Mock] API failed for ${cleanDate}, using mock data`);
+        const mockData = generateMockBankData(cleanDate);
+        // Mock 데이터도 캐시에 저장 (과거 데이터는 영구 저장)
+        if (!isToday) {
+            localStorage.setItem(cacheKey, JSON.stringify({
+                data: mockData,
+                timestamp: now.getTime()
+            }));
+        }
+        return mockData;
     }
 };
 
