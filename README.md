@@ -18,7 +18,13 @@ npm run dev
   - EUR: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_EURKRW
   - CNY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_CNYKRW
   - JPY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_JPYKRW
-- No API keys required. CORS is handled via proxy:
+- Past data (약 90일) is pre-scraped into a static file `public/rates.json` and served with the app. Only today’s data is fetched live (page 1) to refresh the latest rate.
+- Build/update static rates locally:
+  ```bash
+  npm run build:rates
+  ```
+  This writes `public/rates.json`; commit and deploy to update the server copy.
+- CORS/proxy:
   - Vercel rewrite: `/api/naver/:path*` → `https://finance.naver.com/:path*`
   - Local dev: Vite proxy forwards `/api/naver` to `https://finance.naver.com`
 
