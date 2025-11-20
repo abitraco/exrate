@@ -62,6 +62,17 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                             <LanguageToggle />
                         </div>
 
+                        <div className="hidden md:block h-6 w-px bg-gray-200 mx-2"></div>
+
+                        <a
+                            href="https://customsrate.abitra.co/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors whitespace-nowrap"
+                        >
+                            과세환율보기
+                        </a>
+
                         {!hideTypeToggle && (
                             <>
                                 <div className="hidden md:block h-6 w-px bg-gray-200 mx-2"></div>
@@ -71,8 +82,8 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                                     <button
                                         onClick={() => onTypeChange(RateType.IMPORT)}
                                         className={`flex-1 md:flex-none inline-flex justify-center items-center px-3 py-2 border rounded-md text-sm font-medium transition-colors duration-150 ${activeType === RateType.IMPORT
-                                                ? 'border-blue-500 text-blue-600 bg-blue-50'
-                                                : 'border-gray-300 text-gray-700 bg-white hover:bg-gray-50'
+                                            ? 'border-blue-500 text-blue-600 bg-blue-50'
+                                            : 'border-gray-300 text-gray-700 bg-white hover:bg-gray-50'
                                             }`}
                                     >
                                         <Ship className="mr-2 h-4 w-4" />
@@ -81,8 +92,8 @@ const Header: React.FC<HeaderProps> = ({ activeType, onTypeChange, language, onL
                                     <button
                                         onClick={() => onTypeChange(RateType.EXPORT)}
                                         className={`flex-1 md:flex-none inline-flex justify-center items-center px-3 py-2 border rounded-md text-sm font-medium transition-colors duration-150 ${activeType === RateType.EXPORT
-                                                ? 'border-green-500 text-green-600 bg-green-50'
-                                                : 'border-gray-300 text-gray-700 bg-white hover:bg-gray-50'
+                                            ? 'border-green-500 text-green-600 bg-green-50'
+                                            : 'border-gray-300 text-gray-700 bg-white hover:bg-gray-50'
                                             }`}
                                     >
                                         <Plane className="mr-2 h-4 w-4" />

@@ -200,21 +200,23 @@ const App: React.FC = () => {
 
       <footer className="bg-white border-t border-gray-200 mt-8">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-gray-500">
-            &copy; {new Date().getFullYear()}{' '}
-            {t.footerLink ? (
+          <div className="flex flex-col items-center justify-center gap-2 text-sm text-gray-500">
+            <p>
+              &copy; {new Date().getFullYear()} (주)아비트라서울 Made with 💻 in Seoul.
+            </p>
+            <p>
+              If you find this useful,{' '}
               <a
-                href={t.footerLink}
+                href="https://paypal.me/chancekim79"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="text-blue-500 hover:underline font-medium"
               >
-                {t.footer}
+                buy me a coffee ☕
               </a>
-            ) : (
-              t.footer
-            )}
-          </p>
+              !
+            </p>
+          </div>
         </div>
       </footer>
     </div>
