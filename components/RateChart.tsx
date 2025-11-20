@@ -23,8 +23,8 @@ const RateChart: React.FC<RateChartProps> = ({ data, isLoading, title, currencie
         );
     }
 
-    // Reverse data to show chronological order (oldest to newest)
-    const chartData = [...data].reverse();
+    // Data is already sorted oldest -> newest upstream
+    const chartData = data;
 
     return (
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
