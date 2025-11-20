@@ -9,6 +9,7 @@ const ISCD = String(env.VITE_NH_ISCD || env.REACT_APP_NH_ISCD || '').trim();
 const FINTECH_APSNO = String(env.VITE_NH_FINTECH_APSNO || env.REACT_APP_NH_FINTECH_APSNO || '001').trim();
 const API_SVC_CD = String(env.VITE_NH_API_SVC_CD || env.REACT_APP_NH_API_SVC_CD || 'DrawingTransferA').trim();
 const ALLOW_MOCK = Boolean(env.DEV || env.VITE_ALLOW_MOCK === 'true' || env.REACT_APP_ALLOW_MOCK === 'true');
+const NH_API_URL = String(env.VITE_NH_API_URL || '/api/nh').trim();
 
 const TARGET_CURRENCIES = ['USD', 'EUR', 'CNY', 'JPY'];
 const CACHE_PREFIX = 'bank_rate_v1_';
@@ -96,7 +97,7 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
         };
 
         try {
-            const response = await fetch('https://developers.nonghyup.com/InquireExchangeRate.nh', {
+            const response = await fetch(NH_API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

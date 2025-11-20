@@ -21,6 +21,7 @@ npm run dev
   - `VITE_NH_FINTECH_APSNO` (default: `001`)
   - `VITE_NH_API_SVC_CD` (default: `DrawingTransferA`)
 - Optional: `VITE_ALLOW_MOCK=true` to show mock data when API is unavailable (defaults to on in dev).
+- Proxy/CORS: Vercel rewrite routes `/api/nh` → NH API. Frontend uses `/api/nh` by default via `VITE_NH_API_URL` (optional override).
 
 ## Notes
 - No customs API calls remain in the codebase.

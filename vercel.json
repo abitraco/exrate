@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/nh",
+      "destination": "https://developers.nonghyup.com/InquireExchangeRate.nh"
+    }
+  ]
+}
