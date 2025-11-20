@@ -24,4 +24,4 @@ npm run dev
 
 ## Notes
 - No customs API calls remain in the codebase.
-- In production, set the required env vars to see live rates; without them the request will fail and (if allowed) mock data is used.
+- If the NH API call fails and mock fallback is allowed, demo data will show; set the required env vars in production to see live rates.
