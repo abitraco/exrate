@@ -193,7 +193,16 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center gap-2 text-sm text-gray-500">
             <p>
-              &copy; {new Date().getFullYear()} (주)아비트라서울 Made with 💻 in Seoul.
+              &copy; {new Date().getFullYear()}{' '}
+              <a
+                href="https://www.abitra.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline font-medium"
+              >
+                (주)아비트라서울
+              </a>{' '}
+              | Made with 💻 in Seoul.
             </p>
             <p>
               If you find this useful,{' '}
