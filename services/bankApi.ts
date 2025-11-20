@@ -11,6 +11,8 @@ const CURRENCIES = [
 
 // Use Vercel rewrite in production; Vite proxy in dev
 const NAVER_PROXY_BASE = (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_NAVER_PROXY_BASE) || '/api/naver';
+const MAX_PAGES = 12; // safety cap
+const DAYS_BACK = 90; // ~3 months
 
 const decodeEucKr = async (response: Response) => {
     const buf = await response.arrayBuffer();
@@ -69,14 +71,44 @@ const parseTable = (html: string, currencyCode: string, currencyName: string, co
 };
 
 export const fetchBankRates = async (): Promise<RateData[]> => {
-    const fetches = CURRENCIES.map(async (c) => {
-        const url = `${NAVER_PROXY_BASE}/marketindex/exchangeDailyQuote.naver?marketindexCd=${c.marketIndexCd}`;
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`Naver fetch failed for ${c.code}: ${res.status}`);
-        const html = await decodeEucKr(res);
-        return parseTable(html, c.code, c.name, c.country);
-    });
+    const cutoff = (() => {
+        const d = new Date();
+        d.setDate(d.getDate() - DAYS_BACK);
+        d.setHours(0, 0, 0, 0);
+        return d;
+    })();
 
-    const results = await Promise.all(fetches);
+    const fetchCurrency = async (c: typeof CURRENCIES[number]) => {
+        let page = 1;
+        const collected: RateData[] = [];
+        let done = false;
+
+        while (!done && page <= MAX_PAGES) {
+            const url = `${NAVER_PROXY_BASE}/marketindex/exchangeDailyQuote.naver?marketindexCd=${c.marketIndexCd}&page=${page}`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`Naver fetch failed for ${c.code} page ${page}: ${res.status}`);
+            const html = await decodeEucKr(res);
+            const rates = parseTable(html, c.code, c.name, c.country);
+            if (rates.length === 0) break;
+
+            const filtered = rates.filter(r => {
+                const d = new Date(r.date);
+                return d >= cutoff;
+            });
+            collected.push(...filtered);
+
+            const oldest = rates[rates.length - 1];
+            const oldestDate = new Date(oldest.date);
+            if (oldestDate < cutoff) {
+                done = true;
+            } else {
+                page += 1;
+            }
+        }
+
+        return collected;
+    };
+
+    const results = await Promise.all(CURRENCIES.map(fetchCurrency));
     return results.flat();
 };
