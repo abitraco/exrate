@@ -91,7 +91,7 @@ export const fetchBankRates = async (date: string): Promise<RateData[]> => {
                 IsTuno: generateIsTuno(),
                 AccessToken: ACCESS_TOKEN
             },
-            Btb: "0001",
+            Btb: isToday ? "0000" : "0001", // 0000: latest posted rate for today, 0001: branch code for past dates
             Crcd: currency,
             Inymd: cleanDate
         };
