@@ -118,3 +118,22 @@ export const getRecentFridays = (count: number): string[] => {
 
     return dates;
 };
+
+export const getRecentBusinessDays = (count: number): string[] => {
+    const dates: string[] = [];
+    const now = new Date();
+    let current = new Date(now);
+
+    while (dates.length < count) {
+        const dayOfWeek = current.getDay();
+        // 0=Sun, 6=Sat. Skip weekends.
+        if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+            const year = current.getFullYear();
+            const month = String(current.getMonth() + 1).padStart(2, '0');
+            const day = String(current.getDate()).padStart(2, '0');
+            dates.push(`${year}${month}${day}`);
+        }
+        current.setDate(current.getDate() - 1);
+    }
+    return dates;
+};

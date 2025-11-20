@@ -1,4 +1,4 @@
-import { RateData, BankRateResponse, BankRateRecord } from '../types';
+import { RateData, BankRateResponse } from '../types';
 import { formatDateForDisplay } from '../utils/dateUtils';
 
 // Constants from User

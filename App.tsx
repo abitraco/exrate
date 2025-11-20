@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { RateData, ChartDataPoint, Language } from './types';
 import { fetchBankRates } from './services/bankApi';
-import { getRecentFridays, getTodayString } from './utils/dateUtils';
+import { getRecentBusinessDays, getTodayString } from './utils/dateUtils';
 import Header from './components/Header';
 import StatCard from './components/StatCard';
 import RateChart from './components/RateChart';
@@ -84,10 +84,11 @@ const App: React.FC = () => {
     const fetchInitialData = async () => {
       setLoading(true);
       const today = getTodayString();
-      const fridays = getRecentFridays(12); // Last 3 months (approx)
+      // Fetch last 3 months of business days (approx 65 days)
+      const businessDays = getRecentBusinessDays(65);
 
       // Combine dates, ensuring unique and sorted
-      const dates = Array.from(new Set([today, ...fridays])).sort().reverse();
+      const dates = Array.from(new Set([today, ...businessDays])).sort().reverse();
 
       try {
         const dataPromises = dates.map(day => fetchBankRates(day));
