@@ -1,33 +1,12 @@
-# NH Bank Exchange Rate API
+# 환율 데이터 출처
 
-- Endpoint: `https://developers.nonghyup.com/InquireExchangeRate.nh`
-- Must update when you test:
-  - `Iscd`: your institution code (replace the sample)
-  - `AccessToken`: your issued token (replace the sample)
-- API guide: https://developers.nonghyup.com/guide/GU_1000
-- Env variables (set in Vercel or `.env`):
-  - `VITE_NH_ISCD` (required)
-  - `VITE_NH_ACCESS_TOKEN` (required)
-  - `VITE_NH_FINTECH_APSNO` (default `001`)
-  - `VITE_NH_API_SVC_CD` (default `DrawingTransferA`)
+네이버 금융 일일시세 테이블을 스크레이핑하여 사용합니다. (API 키 불필요)
 
-## Sample request body
-```json
-{
-  "Header": {
-    "ApiNm": "InquireExchangeRate",
-    "Tsymd": "20251120",
-    "Trtm": "112428",
-    "Iscd": "000013",
-    "FintechApsno": "001",
-    "ApiSvcCd": "DrawingTransferA",
-    "IsTuno": "234332453212344",
-    "AccessToken": "cb0c9226c6d3bbd3c05529531ba7ce740bfd03709feb9583c8158737b053a916"
-  },
-  "Btb": "0001",
-  "Crcd": "USD",
-  "Inymd": "20251120"
-}
-```
+- USD: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_USDKRW  
+- EUR: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_EURKRW  
+- CNY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_CNYKRW  
+- JPY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_JPYKRW  
 
-> Replace `Iscd` and `AccessToken` with your real values before calling the API.
+프록시
+- Vercel: `/api/naver/:path*` → `https://finance.naver.com/:path*`
+- 로컬: Vite `server.proxy`로 `/api/naver`을 동일하게 우회

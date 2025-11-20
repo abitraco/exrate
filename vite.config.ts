@@ -9,4 +9,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
     },
   },
+  server: {
+    proxy: {
+      '/api/naver': {
+        target: 'https://finance.naver.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (p) => p.replace(/^\/api\/naver/, ''),
+      },
+    },
+  },
 });

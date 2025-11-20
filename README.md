@@ -12,16 +12,15 @@ npm install
 npm run dev
 ```
 
-## Bank API configuration (NH Open API)
-- Endpoint: `https://developers.nonghyup.com/InquireExchangeRate.nh`
-- API guide: https://developers.nonghyup.com/guide/GU_1000
-- Set these environment variables (Vercel project settings or `.env`):
-  - `VITE_NH_ISCD` (required)
-  - `VITE_NH_ACCESS_TOKEN` (required)
-  - `VITE_NH_FINTECH_APSNO` (default: `001`)
-  - `VITE_NH_API_SVC_CD` (default: `DrawingTransferA`)
-- Optional: `VITE_ALLOW_MOCK=true` to show mock data when API is unavailable (defaults to on in dev).
-- Proxy/CORS: Vercel rewrite routes `/api/nh` → NH API. Frontend uses `/api/nh` by default via `VITE_NH_API_URL` (optional override).
+## Data source
+- Scrapes daily quote tables from Naver Finance:
+  - USD: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_USDKRW
+  - EUR: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_EURKRW
+  - CNY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_CNYKRW
+  - JPY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_JPYKRW
+- No API keys required. CORS is handled via proxy:
+  - Vercel rewrite: `/api/naver/:path*` → `https://finance.naver.com/:path*`
+  - Local dev: Vite proxy forwards `/api/naver` to `https://finance.naver.com`
 
 ## Notes
 - No customs API calls remain in the codebase.

@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { RateData, ChartDataPoint, Language } from './types';
 import { fetchBankRates } from './services/bankApi';
-import { getRecentBusinessDays, getTodayString } from './utils/dateUtils';
 import Header from './components/Header';
 import StatCard from './components/StatCard';
 import RateChart from './components/RateChart';
@@ -13,29 +12,29 @@ const TRANSLATIONS = {
   KO: {
     header: { title: '은행 고시 환율', import: '수입', export: '수출' },
     table: {
-      title: '환율목록',
+      title: '환율 목록',
       searchPlaceholder: '통화 검색...',
-      country: '국가/부호',
+      country: '국가/코드',
       currency: '통화명',
       rate: '매매기준율',
-      cashBuy: '현금 사실 때',
-      cashSell: '현금 파실 때',
+      cashBuy: '현찰 사실 때',
+      cashSell: '현찰 파실 때',
       ttBuy: '송금 받으실 때',
       ttSell: '송금 보내실 때',
-      date: '고시일자',
+      date: '기준일',
       noData: '데이터가 없습니다.'
     },
     chart: {
-      titleUsd: '환율 변동 추이 (미국 달러)',
-      titleEur: '환율 변동 추이 (유로)',
-      titleCny: '환율 변동 추이 (중국 위안)',
-      titleJpy: '환율 변동 추이 (일본 엔)'
+      titleUsd: '환율 추이 (미국 달러)',
+      titleEur: '환율 추이 (유로)',
+      titleCny: '환율 추이 (중국 위안)',
+      titleJpy: '환율 추이 (일본 엔)'
     },
     card: { vsLast: '전일 대비' },
-    footer: '(주)아비트라서울',
+    footer: '(주)아비트라코',
     footerLink: 'https://www.abitra.co',
     info: {
-      text: '데이터는 농협 오픈 API를 통해 제공됩니다.',
+      text: '데이터는 네이버 금융 일일시세를 기반으로 표시됩니다.',
       periodPrefix: '조회 기준일: ',
       note: ''
     }
@@ -62,9 +61,9 @@ const TRANSLATIONS = {
       titleJpy: 'Trend (JPY)'
     },
     card: { vsLast: 'vs Previous' },
-    footer: 'Bank Rate Dashboard. Data provided by NH Open API.',
+    footer: 'Bank Rate Dashboard. Data provided via Naver Finance.',
     info: {
-      text: 'Data is provided via the NH Open API.',
+      text: 'Data is scraped from Naver Finance daily quotes.',
       periodPrefix: 'Base Date: ',
       note: ''
     }
@@ -83,17 +82,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchInitialData = async () => {
       setLoading(true);
-      const today = getTodayString();
-      // Fetch last 3 months of business days (approx 65 days)
-      const businessDays = getRecentBusinessDays(65);
-
-      // Combine dates, ensuring unique and sorted
-      const dates = Array.from(new Set([today, ...businessDays])).sort().reverse();
-
       try {
-        const dataPromises = dates.map(day => fetchBankRates(day));
-        const results = await Promise.all(dataPromises);
-        const flatData = results.flat();
+        const flatData = await fetchBankRates();
 
         // Sort by date descending
         flatData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

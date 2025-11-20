@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/nh",
-      "destination": "https://developers.nonghyup.com/InquireExchangeRate.nh"
+      "source": "/api/naver/:path*",
+      "destination": "https://finance.naver.com/:path*"
     }
   ]
 }
