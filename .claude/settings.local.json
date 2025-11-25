@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if [ -f .cursorrules ])",
+      "Bash(then cat .cursorrules)",
+      "Bash(fi)",
+      "Bash(if [ -d .cursor/rules ])",
+      "Bash(then ls -la .cursor/rules/)",
+      "Bash(if [ -f .github/copilot-instructions.md ])",
+      "Bash(then cat .github/copilot-instructions.md)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

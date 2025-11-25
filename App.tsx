@@ -34,8 +34,8 @@ const TRANSLATIONS = {
     footer: '(주)아비트라코',
     footerLink: 'https://www.abitra.co',
     info: {
-      text: '데이터는 네이버 금융 일일시세를 기반으로 표시됩니다.',
-      periodPrefix: '조회 기준일: ',
+      text: '환율 데이터는 GitHub Actions가 30분마다 갱신하는 rates.json을 사용합니다. (주말·22~06시는 갱신 중단)',
+      periodPrefix: '기준 일자: ',
       note: ''
     }
   },
@@ -61,9 +61,9 @@ const TRANSLATIONS = {
       titleJpy: 'Trend (JPY)'
     },
     card: { vsLast: 'vs Previous' },
-    footer: 'Bank Rate Dashboard. Data provided via Naver Finance.',
+    footer: 'Bank Rate Dashboard. Data comes from a cached rates.json refreshed by GitHub Actions.',
     info: {
-      text: 'Data is scraped from Naver Finance daily quotes.',
+      text: 'Rates load from rates.json, refreshed every 30 minutes by GitHub Actions (KST, paused weekends and 22:00-06:00).',
       periodPrefix: 'Base Date: ',
       note: ''
     }

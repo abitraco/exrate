@@ -8,8 +8,13 @@
 - JPY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_JPYKRW  
 
 동작 방식
-- 과거 데이터(최근 약 90일)는 `public/rates.json`에 사전 수집해 배포 시 함께 제공됩니다.
-- 오늘 데이터만 네이버 1페이지를 라이브로 조회해 최신 값으로 갱신합니다.
+- 모든 데이터(과거 약 90일 + 오늘)는 `public/rates.json`에 저장되어 있으며, 클라이언트는 이 정적 파일만 읽습니다.
+- 브라우저에서는 네이버를 직접 조회하지 않습니다. (라이브 스크레이핑 없음)
+- GitHub Actions를 통해 평일 오전 6시~오후 10시까지 매 30분마다 데이터를 자동 업데이트합니다.
+  - 스크립트(`npm run build:rates`)가 네이버에서 최근 90일 데이터를 스크레이핑
+  - 오늘 데이터를 포함한 전체 데이터를 `public/rates.json`에 저장
+  - 변경사항을 자동 커밋하여 배포 
+
 
 정적 데이터 생성
 ```bash

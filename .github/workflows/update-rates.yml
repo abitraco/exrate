@@ -1,32 +1,55 @@
-name: Update Naver Rates
+name: Update Rates JSON
 
 on:
   schedule:
-    - cron: "0 21 * * *" # 06:00 KST (21:00 UTC previous day)
+    - cron: "*/30 * * * *" # every 30 minutes
   workflow_dispatch:
 
 jobs:
   build-rates:
     runs-on: ubuntu-latest
     steps:
+      - name: Check run window (KST)
+        id: window
+        run: |
+          HOUR=$(TZ=Asia/Seoul date +%H)
+          DOW=$(TZ=Asia/Seoul date +%u)
+
+          if [ "$DOW" -ge 6 ]; then
+            echo "within=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ "$HOUR" -ge 22 ] || [ "$HOUR" -lt 6 ]; then
+            echo "within=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "within=true" >> "$GITHUB_OUTPUT"
+
       - name: Checkout
+        if: steps.window.outputs.within == 'true'
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
       - name: Setup Node
+        if: steps.window.outputs.within == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
       - name: Install dependencies
+        if: steps.window.outputs.within == 'true'
         run: npm ci
 
       - name: Build rates
+        if: steps.window.outputs.within == 'true'
         run: npm run build:rates
 
       - name: Commit changes
+        if: steps.window.outputs.within == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -34,7 +57,7 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update rates.json"
 
       - name: Push changes
-        if: success()
+        if: steps.window.outputs.within == 'true'
         run: git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
