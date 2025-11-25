@@ -31,10 +31,10 @@ const TRANSLATIONS = {
       titleJpy: '환율 추이 (일본 엔)'
     },
     card: { vsLast: '전일 대비' },
-    footer: '(주)아비트라코',
+    footer: '(주)아비트라',
     footerLink: 'https://www.abitra.co',
     info: {
-      text: '환율 데이터는 GitHub Actions가 30분마다 갱신하는 rates.json을 사용합니다. (주말·22~06시는 갱신 중단)',
+      text: '환율 데이터는 네이버에서 30분마다 갱신합니다.',
       periodPrefix: '기준 일자: ',
       note: ''
     }
