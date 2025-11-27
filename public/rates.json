@@ -18,14 +18,14 @@
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
-    "rate": 1693.5,
+    "rate": 1693.58,
     "date": "2025-11-27",
     "type": "bank",
-    "cashBuy": 1727.2,
-    "cashSell": 1659.8,
-    "ttSell": 1710.43,
-    "ttBuy": 1676.57,
-    "baseRate": 1693.5
+    "cashBuy": 1727.28,
+    "cashSell": 1659.88,
+    "ttSell": 1710.51,
+    "ttBuy": 1676.65,
+    "baseRate": 1693.58
   },
   {
     "id": "20251127-JPY",
