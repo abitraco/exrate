@@ -4,14 +4,14 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 210.5,
+    "rate": 210.56,
     "date": "2025-12-22",
     "type": "bank",
-    "cashBuy": 221.02,
-    "cashSell": 199.98,
-    "ttSell": 212.6,
-    "ttBuy": 208.4,
-    "baseRate": 210.5
+    "cashBuy": 221.08,
+    "cashSell": 200.04,
+    "ttSell": 212.66,
+    "ttBuy": 208.46,
+    "baseRate": 210.56
   },
   {
     "id": "20251222-EUR",
