@@ -4,14 +4,14 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 206.97,
+    "rate": 206.9,
     "date": "2025-12-24",
     "type": "bank",
-    "cashBuy": 217.31,
-    "cashSell": 196.63,
-    "ttSell": 209.03,
-    "ttBuy": 204.91,
-    "baseRate": 206.97
+    "cashBuy": 217.24,
+    "cashSell": 196.56,
+    "ttSell": 208.96,
+    "ttBuy": 204.84,
+    "baseRate": 206.9
   },
   {
     "id": "20251224-EUR",
@@ -32,14 +32,14 @@
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 929.8,
+    "rate": 929.86,
     "date": "2025-12-24",
     "type": "bank",
-    "cashBuy": 946.07,
-    "cashSell": 913.53,
-    "ttSell": 938.91,
-    "ttBuy": 920.69,
-    "baseRate": 929.8
+    "cashBuy": 946.13,
+    "cashSell": 913.59,
+    "ttSell": 938.97,
+    "ttBuy": 920.75,
+    "baseRate": 929.86
   },
   {
     "id": "20251224-USD",
