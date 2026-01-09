@@ -4,14 +4,14 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 209.07,
+    "rate": 209.11,
     "date": "2026-01-09",
     "type": "bank",
-    "cashBuy": 219.52,
-    "cashSell": 198.62,
-    "ttSell": 211.16,
-    "ttBuy": 206.98,
-    "baseRate": 209.07
+    "cashBuy": 219.56,
+    "cashSell": 198.66,
+    "ttSell": 211.2,
+    "ttBuy": 207.02,
+    "baseRate": 209.11
   },
   {
     "id": "20260109-EUR",
@@ -32,14 +32,14 @@
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 925.76,
+    "rate": 926.02,
     "date": "2026-01-09",
     "type": "bank",
-    "cashBuy": 941.96,
-    "cashSell": 909.56,
-    "ttSell": 934.83,
-    "ttBuy": 916.69,
-    "baseRate": 925.76
+    "cashBuy": 942.22,
+    "cashSell": 909.82,
+    "ttSell": 935.09,
+    "ttBuy": 916.95,
+    "baseRate": 926.02
   },
   {
     "id": "20260109-USD",
