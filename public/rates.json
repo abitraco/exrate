@@ -32,14 +32,14 @@
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 923.46,
+    "rate": 923.67,
     "date": "2026-01-09",
     "type": "bank",
-    "cashBuy": 939.62,
-    "cashSell": 907.3,
-    "ttSell": 932.5,
-    "ttBuy": 914.42,
-    "baseRate": 923.46
+    "cashBuy": 939.83,
+    "cashSell": 907.51,
+    "ttSell": 932.72,
+    "ttBuy": 914.62,
+    "baseRate": 923.67
   },
   {
     "id": "20260109-USD",
