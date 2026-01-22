@@ -18,14 +18,14 @@
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
-    "rate": 1717.66,
+    "rate": 1717,
     "date": "2026-01-22",
     "type": "bank",
-    "cashBuy": 1751.84,
-    "cashSell": 1683.48,
-    "ttSell": 1734.83,
-    "ttBuy": 1700.49,
-    "baseRate": 1717.66
+    "cashBuy": 1751.16,
+    "cashSell": 1682.84,
+    "ttSell": 1734.17,
+    "ttBuy": 1699.83,
+    "baseRate": 1717
   },
   {
     "id": "20260122-JPY",
