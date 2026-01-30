@@ -4,70 +4,56 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 208.46,
+    "rate": 207.6,
     "date": "2026-01-30",
     "type": "bank",
-    "cashBuy": 218.88,
-    "cashSell": 198.04,
-    "ttSell": 210.54,
-    "ttBuy": 206.38,
-    "baseRate": 208.46
+    "cashBuy": 217.98,
+    "cashSell": 197.22,
+    "ttSell": 209.67,
+    "ttBuy": 205.53,
+    "baseRate": 207.6
   },
   {
     "id": "20260130-EUR",
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
-    "rate": 1719.65,
+    "rate": 1720.06,
     "date": "2026-01-30",
     "type": "bank",
-    "cashBuy": 1753.87,
-    "cashSell": 1685.43,
-    "ttSell": 1736.84,
-    "ttBuy": 1702.46,
-    "baseRate": 1719.65
-  },
-  {
-    "id": "20260130-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1985.26,
-    "date": "2026-01-30",
-    "type": "bank",
-    "cashBuy": 2024.36,
-    "cashSell": 1946.16,
-    "ttSell": 2005.11,
-    "ttBuy": 1965.41,
-    "baseRate": 1985.26
+    "cashBuy": 1754.28,
+    "cashSell": 1685.84,
+    "ttSell": 1737.26,
+    "ttBuy": 1702.86,
+    "baseRate": 1720.06
   },
   {
     "id": "20260130-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 937.49,
+    "rate": 936.48,
     "date": "2026-01-30",
     "type": "bank",
-    "cashBuy": 953.89,
-    "cashSell": 921.09,
-    "ttSell": 946.67,
-    "ttBuy": 928.31,
-    "baseRate": 937.49
+    "cashBuy": 952.86,
+    "cashSell": 920.1,
+    "ttSell": 945.65,
+    "ttBuy": 927.31,
+    "baseRate": 936.48
   },
   {
     "id": "20260130-USD",
     "countryCode": "US",
     "currencyName": "미국 달러",
     "currencyCode": "USD",
-    "rate": 1451,
+    "rate": 1442.7,
     "date": "2026-01-30",
     "type": "bank",
-    "cashBuy": 1476.39,
-    "cashSell": 1425.61,
-    "ttSell": 1465.2,
-    "ttBuy": 1436.8,
-    "baseRate": 1451
+    "cashBuy": 1467.94,
+    "cashSell": 1417.46,
+    "ttSell": 1456.8,
+    "ttBuy": 1428.6,
+    "baseRate": 1442.7
   },
   {
     "id": "20260129-CNY",
@@ -96,20 +82,6 @@
     "ttSell": 1734.51,
     "ttBuy": 1700.17,
     "baseRate": 1717.34
-  },
-  {
-    "id": "20260129-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1980.87,
-    "date": "2026-01-29",
-    "type": "bank",
-    "cashBuy": 2019.89,
-    "cashSell": 1941.85,
-    "ttSell": 2000.67,
-    "ttBuy": 1961.07,
-    "baseRate": 1980.87
   },
   {
     "id": "20260129-JPY",
@@ -168,20 +140,6 @@
     "baseRate": 1713.89
   },
   {
-    "id": "20260128-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1978.73,
-    "date": "2026-01-28",
-    "type": "bank",
-    "cashBuy": 2017.71,
-    "cashSell": 1939.75,
-    "ttSell": 1998.51,
-    "ttBuy": 1958.95,
-    "baseRate": 1978.73
-  },
-  {
     "id": "20260128-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -236,20 +194,6 @@
     "ttSell": 1745.84,
     "ttBuy": 1711.28,
     "baseRate": 1728.56
-  },
-  {
-    "id": "20260127-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1987.52,
-    "date": "2026-01-27",
-    "type": "bank",
-    "cashBuy": 2026.67,
-    "cashSell": 1948.37,
-    "ttSell": 2007.39,
-    "ttBuy": 1967.65,
-    "baseRate": 1987.52
   },
   {
     "id": "20260127-JPY",
@@ -308,20 +252,6 @@
     "baseRate": 1719.86
   },
   {
-    "id": "20260126-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1980.65,
-    "date": "2026-01-26",
-    "type": "bank",
-    "cashBuy": 2019.66,
-    "cashSell": 1941.64,
-    "ttSell": 2000.45,
-    "ttBuy": 1960.85,
-    "baseRate": 1980.65
-  },
-  {
     "id": "20260126-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -376,20 +306,6 @@
     "ttSell": 1745.15,
     "ttBuy": 1710.61,
     "baseRate": 1727.88
-  },
-  {
-    "id": "20260123-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1990.56,
-    "date": "2026-01-23",
-    "type": "bank",
-    "cashBuy": 2029.77,
-    "cashSell": 1951.35,
-    "ttSell": 2010.46,
-    "ttBuy": 1970.66,
-    "baseRate": 1990.56
   },
   {
     "id": "20260123-JPY",
@@ -448,20 +364,6 @@
     "baseRate": 1721.52
   },
   {
-    "id": "20260122-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1977.75,
-    "date": "2026-01-22",
-    "type": "bank",
-    "cashBuy": 2016.71,
-    "cashSell": 1938.79,
-    "ttSell": 1997.52,
-    "ttBuy": 1957.98,
-    "baseRate": 1977.75
-  },
-  {
     "id": "20260122-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -516,20 +418,6 @@
     "ttSell": 1732.38,
     "ttBuy": 1698.08,
     "baseRate": 1715.23
-  },
-  {
-    "id": "20260121-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1971.12,
-    "date": "2026-01-21",
-    "type": "bank",
-    "cashBuy": 2009.95,
-    "cashSell": 1932.29,
-    "ttSell": 1990.83,
-    "ttBuy": 1951.41,
-    "baseRate": 1971.12
   },
   {
     "id": "20260121-JPY",
@@ -588,20 +476,6 @@
     "baseRate": 1734.18
   },
   {
-    "id": "20260120-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1988.19,
-    "date": "2026-01-20",
-    "type": "bank",
-    "cashBuy": 2027.35,
-    "cashSell": 1949.03,
-    "ttSell": 2008.07,
-    "ttBuy": 1968.31,
-    "baseRate": 1988.19
-  },
-  {
     "id": "20260120-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -656,20 +530,6 @@
     "ttSell": 1734.07,
     "ttBuy": 1699.75,
     "baseRate": 1716.91
-  },
-  {
-    "id": "20260119-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1979.88,
-    "date": "2026-01-19",
-    "type": "bank",
-    "cashBuy": 2018.88,
-    "cashSell": 1940.88,
-    "ttSell": 1999.67,
-    "ttBuy": 1960.09,
-    "baseRate": 1979.88
   },
   {
     "id": "20260119-JPY",
@@ -728,20 +588,6 @@
     "baseRate": 1711.8
   },
   {
-    "id": "20260116-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1974.66,
-    "date": "2026-01-16",
-    "type": "bank",
-    "cashBuy": 2013.56,
-    "cashSell": 1935.76,
-    "ttSell": 1994.4,
-    "ttBuy": 1954.92,
-    "baseRate": 1974.66
-  },
-  {
     "id": "20260116-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -796,20 +642,6 @@
     "ttSell": 1723.93,
     "ttBuy": 1689.81,
     "baseRate": 1706.87
-  },
-  {
-    "id": "20260115-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1967.26,
-    "date": "2026-01-15",
-    "type": "bank",
-    "cashBuy": 2006.01,
-    "cashSell": 1928.51,
-    "ttSell": 1986.93,
-    "ttBuy": 1947.59,
-    "baseRate": 1967.26
   },
   {
     "id": "20260115-JPY",
@@ -868,20 +700,6 @@
     "baseRate": 1707.81
   },
   {
-    "id": "20260114-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1971.64,
-    "date": "2026-01-14",
-    "type": "bank",
-    "cashBuy": 2010.48,
-    "cashSell": 1932.8,
-    "ttSell": 1991.35,
-    "ttBuy": 1951.93,
-    "baseRate": 1971.64
-  },
-  {
     "id": "20260114-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -936,20 +754,6 @@
     "ttSell": 1738.92,
     "ttBuy": 1704.5,
     "baseRate": 1721.71
-  },
-  {
-    "id": "20260113-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1985.11,
-    "date": "2026-01-13",
-    "type": "bank",
-    "cashBuy": 2024.21,
-    "cashSell": 1946.01,
-    "ttSell": 2004.96,
-    "ttBuy": 1965.26,
-    "baseRate": 1985.11
   },
   {
     "id": "20260113-JPY",
@@ -1008,20 +812,6 @@
     "baseRate": 1712.86
   },
   {
-    "id": "20260112-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1976.88,
-    "date": "2026-01-12",
-    "type": "bank",
-    "cashBuy": 2015.82,
-    "cashSell": 1937.94,
-    "ttSell": 1996.64,
-    "ttBuy": 1957.12,
-    "baseRate": 1976.88
-  },
-  {
     "id": "20260112-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1076,20 +866,6 @@
     "ttSell": 1715.28,
     "ttBuy": 1681.32,
     "baseRate": 1698.3
-  },
-  {
-    "id": "20260109-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1956.05,
-    "date": "2026-01-09",
-    "type": "bank",
-    "cashBuy": 1994.58,
-    "cashSell": 1917.52,
-    "ttSell": 1975.61,
-    "ttBuy": 1936.49,
-    "baseRate": 1956.05
   },
   {
     "id": "20260109-JPY",
@@ -1148,20 +924,6 @@
     "baseRate": 1694.27
   },
   {
-    "id": "20260108-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1951.89,
-    "date": "2026-01-08",
-    "type": "bank",
-    "cashBuy": 1990.34,
-    "cashSell": 1913.44,
-    "ttSell": 1971.4,
-    "ttBuy": 1932.38,
-    "baseRate": 1951.89
-  },
-  {
     "id": "20260108-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1216,20 +978,6 @@
     "ttSell": 1710.82,
     "ttBuy": 1676.96,
     "baseRate": 1693.89
-  },
-  {
-    "id": "20260107-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1952.59,
-    "date": "2026-01-07",
-    "type": "bank",
-    "cashBuy": 1991.05,
-    "cashSell": 1914.13,
-    "ttSell": 1972.11,
-    "ttBuy": 1933.07,
-    "baseRate": 1952.59
   },
   {
     "id": "20260107-JPY",
@@ -1288,20 +1036,6 @@
     "baseRate": 1694.24
   },
   {
-    "id": "20260106-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1956.87,
-    "date": "2026-01-06",
-    "type": "bank",
-    "cashBuy": 1995.42,
-    "cashSell": 1918.32,
-    "ttSell": 1976.43,
-    "ttBuy": 1937.31,
-    "baseRate": 1956.87
-  },
-  {
     "id": "20260106-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1356,20 +1090,6 @@
     "ttSell": 1712.74,
     "ttBuy": 1678.84,
     "baseRate": 1695.79
-  },
-  {
-    "id": "20260105-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1959.4,
-    "date": "2026-01-05",
-    "type": "bank",
-    "cashBuy": 1998,
-    "cashSell": 1920.8,
-    "ttSell": 1978.99,
-    "ttBuy": 1939.81,
-    "baseRate": 1959.4
   },
   {
     "id": "20260105-JPY",
@@ -1428,20 +1148,6 @@
     "baseRate": 1694.52
   },
   {
-    "id": "20260102-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1946.32,
-    "date": "2026-01-02",
-    "type": "bank",
-    "cashBuy": 1984.66,
-    "cashSell": 1907.98,
-    "ttSell": 1965.78,
-    "ttBuy": 1926.86,
-    "baseRate": 1946.32
-  },
-  {
     "id": "20260102-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1496,20 +1202,6 @@
     "ttSell": 1716.64,
     "ttBuy": 1682.66,
     "baseRate": 1699.65
-  },
-  {
-    "id": "20251231-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1949.62,
-    "date": "2025-12-31",
-    "type": "bank",
-    "cashBuy": 1988.02,
-    "cashSell": 1911.22,
-    "ttSell": 1969.11,
-    "ttBuy": 1930.13,
-    "baseRate": 1949.62
   },
   {
     "id": "20251231-JPY",
@@ -1568,20 +1260,6 @@
     "baseRate": 1692.81
   },
   {
-    "id": "20251230-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1940.38,
-    "date": "2025-12-30",
-    "type": "bank",
-    "cashBuy": 1978.6,
-    "cashSell": 1902.16,
-    "ttSell": 1959.78,
-    "ttBuy": 1920.98,
-    "baseRate": 1940.38
-  },
-  {
     "id": "20251230-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1636,20 +1314,6 @@
     "ttSell": 1705.57,
     "ttBuy": 1671.81,
     "baseRate": 1688.69
-  },
-  {
-    "id": "20251229-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1937.79,
-    "date": "2025-12-29",
-    "type": "bank",
-    "cashBuy": 1975.96,
-    "cashSell": 1899.62,
-    "ttSell": 1957.16,
-    "ttBuy": 1918.42,
-    "baseRate": 1937.79
   },
   {
     "id": "20251229-JPY",
@@ -1708,20 +1372,6 @@
     "baseRate": 1701.27
   },
   {
-    "id": "20251226-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1951.33,
-    "date": "2025-12-26",
-    "type": "bank",
-    "cashBuy": 1989.77,
-    "cashSell": 1912.89,
-    "ttSell": 1970.84,
-    "ttBuy": 1931.82,
-    "baseRate": 1951.33
-  },
-  {
     "id": "20251226-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1776,20 +1426,6 @@
     "ttSell": 1725.47,
     "ttBuy": 1691.31,
     "baseRate": 1708.39
-  },
-  {
-    "id": "20251224-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1960.91,
-    "date": "2025-12-24",
-    "type": "bank",
-    "cashBuy": 1999.53,
-    "cashSell": 1922.29,
-    "ttSell": 1980.51,
-    "ttBuy": 1941.31,
-    "baseRate": 1960.91
   },
   {
     "id": "20251224-JPY",
@@ -1848,20 +1484,6 @@
     "baseRate": 1747.94
   },
   {
-    "id": "20251223-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 2003.44,
-    "date": "2025-12-23",
-    "type": "bank",
-    "cashBuy": 2042.9,
-    "cashSell": 1963.98,
-    "ttSell": 2023.47,
-    "ttBuy": 1983.41,
-    "baseRate": 2003.44
-  },
-  {
     "id": "20251223-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -1916,20 +1538,6 @@
     "ttSell": 1758.9,
     "ttBuy": 1724.08,
     "baseRate": 1741.49
-  },
-  {
-    "id": "20251222-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1993.6,
-    "date": "2025-12-22",
-    "type": "bank",
-    "cashBuy": 2032.87,
-    "cashSell": 1954.33,
-    "ttSell": 2013.53,
-    "ttBuy": 1973.67,
-    "baseRate": 1993.6
   },
   {
     "id": "20251222-JPY",
@@ -1988,20 +1596,6 @@
     "baseRate": 1735.36
   },
   {
-    "id": "20251219-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1980.69,
-    "date": "2025-12-19",
-    "type": "bank",
-    "cashBuy": 2019.7,
-    "cashSell": 1941.68,
-    "ttSell": 2000.49,
-    "ttBuy": 1960.89,
-    "baseRate": 1980.69
-  },
-  {
     "id": "20251219-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2056,20 +1650,6 @@
     "ttSell": 1748.27,
     "ttBuy": 1713.67,
     "baseRate": 1730.97
-  },
-  {
-    "id": "20251218-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1975.7,
-    "date": "2025-12-18",
-    "type": "bank",
-    "cashBuy": 2014.62,
-    "cashSell": 1936.78,
-    "ttSell": 1995.45,
-    "ttBuy": 1955.95,
-    "baseRate": 1975.7
   },
   {
     "id": "20251218-JPY",
@@ -2128,20 +1708,6 @@
     "baseRate": 1736.28
   },
   {
-    "id": "20251217-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1977.86,
-    "date": "2025-12-17",
-    "type": "bank",
-    "cashBuy": 2016.82,
-    "cashSell": 1938.9,
-    "ttSell": 1997.63,
-    "ttBuy": 1958.09,
-    "baseRate": 1977.86
-  },
-  {
     "id": "20251217-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2196,20 +1762,6 @@
     "ttSell": 1750.3,
     "ttBuy": 1715.66,
     "baseRate": 1732.98
-  },
-  {
-    "id": "20251216-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1980.4,
-    "date": "2025-12-16",
-    "type": "bank",
-    "cashBuy": 2019.41,
-    "cashSell": 1941.39,
-    "ttSell": 2000.2,
-    "ttBuy": 1960.6,
-    "baseRate": 1980.4
   },
   {
     "id": "20251216-JPY",
@@ -2268,20 +1820,6 @@
     "baseRate": 1728.48
   },
   {
-    "id": "20251215-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1966.9,
-    "date": "2025-12-15",
-    "type": "bank",
-    "cashBuy": 2005.64,
-    "cashSell": 1928.16,
-    "ttSell": 1986.56,
-    "ttBuy": 1947.24,
-    "baseRate": 1966.9
-  },
-  {
     "id": "20251215-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2336,20 +1874,6 @@
     "ttSell": 1751.48,
     "ttBuy": 1716.8,
     "baseRate": 1734.14
-  },
-  {
-    "id": "20251212-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1975.86,
-    "date": "2025-12-12",
-    "type": "bank",
-    "cashBuy": 2014.78,
-    "cashSell": 1936.94,
-    "ttSell": 1995.61,
-    "ttBuy": 1956.11,
-    "baseRate": 1975.86
   },
   {
     "id": "20251212-JPY",
@@ -2408,20 +1932,6 @@
     "baseRate": 1729.52
   },
   {
-    "id": "20251211-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1972.27,
-    "date": "2025-12-11",
-    "type": "bank",
-    "cashBuy": 2011.12,
-    "cashSell": 1933.42,
-    "ttSell": 1991.99,
-    "ttBuy": 1952.55,
-    "baseRate": 1972.27
-  },
-  {
     "id": "20251211-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2476,20 +1986,6 @@
     "ttSell": 1732.04,
     "ttBuy": 1697.76,
     "baseRate": 1714.9
-  },
-  {
-    "id": "20251210-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1962.38,
-    "date": "2025-12-10",
-    "type": "bank",
-    "cashBuy": 2001.03,
-    "cashSell": 1923.73,
-    "ttSell": 1982,
-    "ttBuy": 1942.76,
-    "baseRate": 1962.38
   },
   {
     "id": "20251210-JPY",
@@ -2548,20 +2044,6 @@
     "baseRate": 1710.03
   },
   {
-    "id": "20251209-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1955.72,
-    "date": "2025-12-09",
-    "type": "bank",
-    "cashBuy": 1994.24,
-    "cashSell": 1917.2,
-    "ttSell": 1975.27,
-    "ttBuy": 1936.17,
-    "baseRate": 1955.72
-  },
-  {
     "id": "20251209-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2616,20 +2098,6 @@
     "ttSell": 1727.67,
     "ttBuy": 1693.47,
     "baseRate": 1710.57
-  },
-  {
-    "id": "20251208-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1958.55,
-    "date": "2025-12-08",
-    "type": "bank",
-    "cashBuy": 1997.13,
-    "cashSell": 1919.97,
-    "ttSell": 1978.13,
-    "ttBuy": 1938.97,
-    "baseRate": 1958.55
   },
   {
     "id": "20251208-JPY",
@@ -2688,20 +2156,6 @@
     "baseRate": 1717.12
   },
   {
-    "id": "20251205-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1965.95,
-    "date": "2025-12-05",
-    "type": "bank",
-    "cashBuy": 2004.67,
-    "cashSell": 1927.23,
-    "ttSell": 1985.6,
-    "ttBuy": 1946.3,
-    "baseRate": 1965.95
-  },
-  {
     "id": "20251205-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2756,20 +2210,6 @@
     "ttSell": 1734.44,
     "ttBuy": 1700.1,
     "baseRate": 1717.27
-  },
-  {
-    "id": "20251204-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1965.95,
-    "date": "2025-12-04",
-    "type": "bank",
-    "cashBuy": 2004.67,
-    "cashSell": 1927.23,
-    "ttSell": 1985.6,
-    "ttBuy": 1946.3,
-    "baseRate": 1965.95
   },
   {
     "id": "20251204-JPY",
@@ -2828,20 +2268,6 @@
     "baseRate": 1711.7
   },
   {
-    "id": "20251203-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1958.45,
-    "date": "2025-12-03",
-    "type": "bank",
-    "cashBuy": 1997.03,
-    "cashSell": 1919.87,
-    "ttSell": 1978.03,
-    "ttBuy": 1938.87,
-    "baseRate": 1958.45
-  },
-  {
     "id": "20251203-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -2896,20 +2322,6 @@
     "ttSell": 1724.92,
     "ttBuy": 1690.78,
     "baseRate": 1707.85
-  },
-  {
-    "id": "20251202-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1940.99,
-    "date": "2025-12-02",
-    "type": "bank",
-    "cashBuy": 1979.22,
-    "cashSell": 1902.76,
-    "ttSell": 1960.39,
-    "ttBuy": 1921.59,
-    "baseRate": 1940.99
   },
   {
     "id": "20251202-JPY",
@@ -2968,20 +2380,6 @@
     "baseRate": 1707.57
   },
   {
-    "id": "20251201-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1943.43,
-    "date": "2025-12-01",
-    "type": "bank",
-    "cashBuy": 1981.71,
-    "cashSell": 1905.15,
-    "ttSell": 1962.86,
-    "ttBuy": 1924,
-    "baseRate": 1943.43
-  },
-  {
     "id": "20251201-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -3036,20 +2434,6 @@
     "ttSell": 1721.86,
     "ttBuy": 1687.78,
     "baseRate": 1704.82
-  },
-  {
-    "id": "20251128-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1945.1,
-    "date": "2025-11-28",
-    "type": "bank",
-    "cashBuy": 1983.41,
-    "cashSell": 1906.79,
-    "ttSell": 1964.55,
-    "ttBuy": 1925.65,
-    "baseRate": 1945.1
   },
   {
     "id": "20251128-JPY",
@@ -3108,20 +2492,6 @@
     "baseRate": 1696.57
   },
   {
-    "id": "20251127-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1936.57,
-    "date": "2025-11-27",
-    "type": "bank",
-    "cashBuy": 1974.72,
-    "cashSell": 1898.42,
-    "ttSell": 1955.93,
-    "ttBuy": 1917.21,
-    "baseRate": 1936.57
-  },
-  {
     "id": "20251127-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -3178,20 +2548,6 @@
     "baseRate": 1705.12
   },
   {
-    "id": "20251126-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1947.02,
-    "date": "2025-11-26",
-    "type": "bank",
-    "cashBuy": 1985.37,
-    "cashSell": 1908.67,
-    "ttSell": 1966.49,
-    "ttBuy": 1927.55,
-    "baseRate": 1947.02
-  },
-  {
     "id": "20251126-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
@@ -3246,20 +2602,6 @@
     "ttSell": 1713.5,
     "ttBuy": 1679.58,
     "baseRate": 1696.54
-  },
-  {
-    "id": "20251125-GBP",
-    "countryCode": "GB",
-    "currencyName": "영국 파운드",
-    "currencyCode": "GBP",
-    "rate": 1931.35,
-    "date": "2025-11-25",
-    "type": "bank",
-    "cashBuy": 1969.39,
-    "cashSell": 1893.31,
-    "ttSell": 1950.66,
-    "ttBuy": 1912.04,
-    "baseRate": 1931.35
   },
   {
     "id": "20251125-JPY",

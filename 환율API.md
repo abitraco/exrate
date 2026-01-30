@@ -23,6 +23,12 @@ npm run build:rates   # public/rates.json 생성/업데이트
 ```
 생성 후 커밋/배포하면 서버에서 과거 데이터가 제공됩니다.
 
-프록시
+
+## 실서버 및 API 주소
+- **웹사이트**: https://exrate.abitra.co/
+- **전체 환율 데이터 (JSON)**: https://exrate.abitra.co/rates.json
+- **최신 환율 데이터 (JSON)**: https://exrate.abitra.co/latest_rates.json
+
+## 프록시 (참고)
 - Vercel: `/api/naver/:path*` → `https://finance.naver.com/:path*`
 - 로컬: Vite `server.proxy`로 `/api/naver`을 동일하게 우회
