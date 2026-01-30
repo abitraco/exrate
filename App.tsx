@@ -28,7 +28,8 @@ const TRANSLATIONS = {
       titleUsd: '환율 추이 (미국 달러)',
       titleEur: '환율 추이 (유로)',
       titleCny: '환율 추이 (중국 위안)',
-      titleJpy: '환율 추이 (일본 엔)'
+      titleJpy: '환율 추이 (일본 엔)',
+      titleGbp: '환율 추이 (영국 파운드)'
     },
     card: { vsLast: '전일 대비' },
     footer: '(주)아비트라',
@@ -58,7 +59,8 @@ const TRANSLATIONS = {
       titleUsd: 'Trend (USD)',
       titleEur: 'Trend (EUR)',
       titleCny: 'Trend (CNY)',
-      titleJpy: 'Trend (JPY)'
+      titleJpy: 'Trend (JPY)',
+      titleGbp: 'Trend (GBP)'
     },
     card: { vsLast: 'vs Previous' },
     footer: 'Bank Rate Dashboard. Data comes from a cached rates.json refreshed by GitHub Actions.',
@@ -124,7 +126,7 @@ const App: React.FC = () => {
         dataByDate.set(item.date, { date: item.date });
       }
       const point = dataByDate.get(item.date)!;
-      if (['USD', 'JPY', 'EUR', 'CNY'].includes(item.currencyCode)) {
+      if (['USD', 'JPY', 'EUR', 'CNY', 'GBP'].includes(item.currencyCode)) {
         point[item.currencyCode] = item.rate; // Using Base Rate
       }
     });
@@ -173,6 +175,7 @@ const App: React.FC = () => {
           <StatCard currency="유로" code="EUR" rate={getRate(latestData, 'EUR')} prevRate={getRate(prevData, 'EUR')} label={t.card.vsLast} />
           <StatCard currency="중국 위안" code="CNY" rate={getRate(latestData, 'CNY')} prevRate={getRate(prevData, 'CNY')} label={t.card.vsLast} />
           <StatCard currency="일본 엔 (100)" code="JPY" rate={getRate(latestData, 'JPY')} prevRate={getRate(prevData, 'JPY')} label={t.card.vsLast} />
+          <StatCard currency="영국 파운드" code="GBP" rate={getRate(latestData, 'GBP')} prevRate={getRate(prevData, 'GBP')} label={t.card.vsLast} />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -181,6 +184,7 @@ const App: React.FC = () => {
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleEur} currencies={[{ key: 'EUR', color: '#3b82f6' }]} />
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleCny} currencies={[{ key: 'CNY', color: '#d97706' }]} />
             <RateChart data={chartData} isLoading={loading} title={t.chart.titleJpy} currencies={[{ key: 'JPY', color: '#22c55e' }]} />
+            <RateChart data={chartData} isLoading={loading} title={t.chart.titleGbp} currencies={[{ key: 'GBP', color: '#8b5cf6' }]} />
           </div>
 
           <div className="lg:col-span-1 lg:h-auto min-h-[600px]">

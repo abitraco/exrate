@@ -44,6 +44,7 @@ export interface ChartDataPoint {
     JPY?: number;
     EUR?: number;
     CNY?: number;
+    GBP?: number;
     [key: string]: number | string | undefined;
 }
 

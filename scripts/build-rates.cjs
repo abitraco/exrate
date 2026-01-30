@@ -9,6 +9,7 @@ const CURRENCIES = [
   { code: 'EUR', name: '유로', country: 'EU', marketIndexCd: 'FX_EURKRW' },
   { code: 'CNY', name: '중국 위안', country: 'CN', marketIndexCd: 'FX_CNYKRW' },
   { code: 'JPY', name: '일본 엔', country: 'JP', marketIndexCd: 'FX_JPYKRW' },
+  { code: 'GBP', name: '영국 파운드', country: 'GB', marketIndexCd: 'FX_GBPKRW' },
 ];
 
 const DAYS_BACK = 90;

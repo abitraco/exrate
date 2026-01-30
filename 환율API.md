@@ -6,6 +6,7 @@
 - EUR: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_EURKRW  
 - CNY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_CNYKRW  
 - JPY: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_JPYKRW  
+- GBP: https://finance.naver.com/marketindex/exchangeDailyQuote.naver?marketindexCd=FX_GBPKRW
 
 동작 방식
 - 모든 데이터(과거 약 90일 + 오늘)는 `public/rates.json`에 저장되어 있으며, 클라이언트는 이 정적 파일만 읽습니다.
