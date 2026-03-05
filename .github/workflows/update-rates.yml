@@ -46,15 +46,17 @@ jobs:
 
       - name: Build rates
         if: steps.window.outputs.within == 'true'
-        run: npm run build:rates
+        run: |
+          npm run build:rates
+          npm run build:latest
 
       - name: Commit changes
         if: steps.window.outputs.within == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/rates.json
-          git diff --cached --quiet || git commit -m "chore: update rates.json"
+          git add public/rates.json public/latest_rates.json
+          git diff --cached --quiet || git commit -m "chore: update rates.json and latest_rates.json"
 
       - name: Push changes
         if: steps.window.outputs.within == 'true'
