@@ -4,56 +4,56 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 213.97,
+    "rate": 213.87,
     "date": "2026-03-10",
     "type": "bank",
-    "cashBuy": 224.66,
-    "cashSell": 203.28,
-    "ttSend": 216.1,
-    "ttReceive": 211.84,
-    "timestamp": "2026-03-10T11:30:52.750Z"
+    "cashBuy": 224.56,
+    "cashSell": 203.18,
+    "ttSend": 216,
+    "ttReceive": 211.74,
+    "timestamp": "2026-03-10T12:55:03.744Z"
   },
   {
     "id": "20260310-EUR",
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
-    "rate": 1712.48,
+    "rate": 1711.75,
     "date": "2026-03-10",
     "type": "bank",
-    "cashBuy": 1746.55,
-    "cashSell": 1678.41,
-    "ttSend": 1729.6,
-    "ttReceive": 1695.36,
-    "timestamp": "2026-03-10T11:30:52.601Z"
+    "cashBuy": 1745.81,
+    "cashSell": 1677.69,
+    "ttSend": 1728.86,
+    "ttReceive": 1694.64,
+    "timestamp": "2026-03-10T12:55:03.555Z"
   },
   {
     "id": "20260310-GBP",
     "countryCode": "GB",
     "currencyName": "영국 파운드",
     "currencyCode": "GBP",
-    "rate": 1978.02,
+    "rate": 1977.65,
     "date": "2026-03-10",
     "type": "bank",
-    "cashBuy": 2016.98,
-    "cashSell": 1939.06,
-    "ttSend": 1997.8,
-    "ttReceive": 1958.24,
-    "timestamp": "2026-03-10T11:30:53.050Z"
+    "cashBuy": 2016.6,
+    "cashSell": 1938.7,
+    "ttSend": 1997.42,
+    "ttReceive": 1957.88,
+    "timestamp": "2026-03-10T12:55:04.123Z"
   },
   {
     "id": "20260310-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 932.21,
+    "rate": 932.03,
     "date": "2026-03-10",
     "type": "bank",
-    "cashBuy": 948.52,
-    "cashSell": 915.9,
-    "ttSend": 941.34,
-    "ttReceive": 923.08,
-    "timestamp": "2026-03-10T11:30:52.902Z"
+    "cashBuy": 948.34,
+    "cashSell": 915.72,
+    "ttSend": 941.16,
+    "ttReceive": 922.9,
+    "timestamp": "2026-03-10T12:55:03.934Z"
   },
   {
     "id": "20260310-USD",
@@ -67,6 +67,6 @@
     "cashSell": 1444.97,
     "ttSend": 1485.1,
     "ttReceive": 1456.3,
-    "timestamp": "2026-03-10T11:30:52.444Z"
+    "timestamp": "2026-03-10T12:55:03.356Z"
   }
 ]
