@@ -4,14 +4,14 @@
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
-    "rate": 227.09,
+    "rate": 226.59,
     "date": "2026-06-29",
     "type": "bank",
-    "cashBuy": 238.44,
-    "cashSell": 215.74,
-    "ttSend": 229.36,
-    "ttReceive": 224.82,
-    "timestamp": "2026-06-29T10:06:47.801Z"
+    "cashBuy": 237.91,
+    "cashSell": 215.27,
+    "ttSend": 228.85,
+    "ttReceive": 224.33,
+    "timestamp": "2026-06-29T21:23:16.743Z"
   },
   {
     "id": "20260629-EUR",
@@ -25,48 +25,48 @@
     "cashSell": 1725.19,
     "ttSend": 1777.81,
     "ttReceive": 1742.61,
-    "timestamp": "2026-06-29T10:06:47.635Z"
+    "timestamp": "2026-06-29T21:23:16.583Z"
   },
   {
     "id": "20260629-GBP",
     "countryCode": "GB",
     "currencyName": "영국 파운드",
     "currencyCode": "GBP",
-    "rate": 2040.28,
+    "rate": 2043.37,
     "date": "2026-06-29",
     "type": "bank",
-    "cashBuy": 2080.47,
-    "cashSell": 2000.09,
-    "ttSend": 2060.68,
-    "ttReceive": 2019.88,
-    "timestamp": "2026-06-29T10:06:48.129Z"
+    "cashBuy": 2083.62,
+    "cashSell": 2003.12,
+    "ttSend": 2063.8,
+    "ttReceive": 2022.94,
+    "timestamp": "2026-06-29T21:23:17.068Z"
   },
   {
     "id": "20260629-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 953.4,
+    "rate": 951.47,
     "date": "2026-06-29",
     "type": "bank",
-    "cashBuy": 970.08,
-    "cashSell": 936.72,
-    "ttSend": 962.74,
-    "ttReceive": 944.06,
-    "timestamp": "2026-06-29T10:06:47.964Z"
+    "cashBuy": 968.12,
+    "cashSell": 934.82,
+    "ttSend": 960.79,
+    "ttReceive": 942.15,
+    "timestamp": "2026-06-29T21:23:16.906Z"
   },
   {
     "id": "20260629-USD",
     "countryCode": "US",
     "currencyName": "미국 달러",
     "currencyCode": "USD",
-    "rate": 1543.5,
+    "rate": 1541,
     "date": "2026-06-29",
     "type": "bank",
-    "cashBuy": 1570.51,
-    "cashSell": 1516.49,
-    "ttSend": 1558.6,
-    "ttReceive": 1528.4,
-    "timestamp": "2026-06-29T10:06:47.466Z"
+    "cashBuy": 1567.96,
+    "cashSell": 1514.04,
+    "ttSend": 1556.1,
+    "ttReceive": 1525.9,
+    "timestamp": "2026-06-29T21:23:16.415Z"
   }
 ]
