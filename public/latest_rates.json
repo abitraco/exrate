@@ -11,49 +11,49 @@
     "cashSell": 197.07,
     "ttSend": 209.51,
     "ttReceive": 205.37,
-    "timestamp": "2026-08-20T22:53:45.146Z"
+    "timestamp": "2026-08-20T23:21:36.962Z"
   },
   {
     "id": "20260820-EUR",
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
-    "rate": 1629.41,
+    "rate": 1629.68,
     "date": "2026-08-20",
     "type": "bank",
-    "cashBuy": 1661.83,
-    "cashSell": 1596.99,
-    "ttSend": 1645.7,
-    "ttReceive": 1613.12,
-    "timestamp": "2026-08-20T22:53:44.979Z"
+    "cashBuy": 1662.11,
+    "cashSell": 1597.25,
+    "ttSend": 1645.97,
+    "ttReceive": 1613.39,
+    "timestamp": "2026-08-20T23:21:36.803Z"
   },
   {
     "id": "20260820-GBP",
     "countryCode": "GB",
     "currencyName": "영국 파운드",
     "currencyCode": "GBP",
-    "rate": 1901.81,
+    "rate": 1901.95,
     "date": "2026-08-20",
     "type": "bank",
-    "cashBuy": 1939.27,
-    "cashSell": 1864.35,
-    "ttSend": 1920.82,
-    "ttReceive": 1882.8,
-    "timestamp": "2026-08-20T22:53:45.479Z"
+    "cashBuy": 1939.41,
+    "cashSell": 1864.49,
+    "ttSend": 1920.96,
+    "ttReceive": 1882.94,
+    "timestamp": "2026-08-20T23:21:37.278Z"
   },
   {
     "id": "20260820-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 877.18,
+    "rate": 877.4,
     "date": "2026-08-20",
     "type": "bank",
-    "cashBuy": 892.53,
-    "cashSell": 861.83,
-    "ttSend": 885.77,
-    "ttReceive": 868.59,
-    "timestamp": "2026-08-20T22:53:45.312Z"
+    "cashBuy": 892.75,
+    "cashSell": 862.05,
+    "ttSend": 885.99,
+    "ttReceive": 868.81,
+    "timestamp": "2026-08-20T23:21:37.121Z"
   },
   {
     "id": "20260820-USD",
@@ -67,6 +67,6 @@
     "cashSell": 1370.4,
     "ttSend": 1408.4,
     "ttReceive": 1381.2,
-    "timestamp": "2026-08-20T22:53:44.810Z"
+    "timestamp": "2026-08-20T23:21:36.642Z"
   }
 ]
