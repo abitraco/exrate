@@ -1,72 +1,72 @@
 [
   {
-    "id": "20260821-CNY",
+    "id": "20260824-CNY",
     "countryCode": "CN",
     "currencyName": "중국 위안",
     "currencyCode": "CNY",
     "rate": 206.37,
-    "date": "2026-08-21",
+    "date": "2026-08-24",
     "type": "bank",
     "cashBuy": 216.68,
     "cashSell": 196.06,
     "ttSend": 208.43,
     "ttReceive": 204.31,
-    "timestamp": "2026-08-23T23:17:13.695Z"
+    "timestamp": "2026-08-23T23:44:15.590Z"
   },
   {
-    "id": "20260821-EUR",
+    "id": "20260824-EUR",
     "countryCode": "EU",
     "currencyName": "유로",
     "currencyCode": "EUR",
     "rate": 1619.46,
-    "date": "2026-08-21",
+    "date": "2026-08-24",
     "type": "bank",
     "cashBuy": 1651.68,
     "cashSell": 1587.24,
     "ttSend": 1635.65,
     "ttReceive": 1603.27,
-    "timestamp": "2026-08-23T23:17:13.528Z"
+    "timestamp": "2026-08-23T23:44:15.438Z"
   },
   {
-    "id": "20260821-GBP",
+    "id": "20260824-GBP",
     "countryCode": "GB",
     "currencyName": "영국 파운드",
     "currencyCode": "GBP",
-    "rate": 1892.35,
-    "date": "2026-08-21",
+    "rate": 1892.7,
+    "date": "2026-08-24",
     "type": "bank",
-    "cashBuy": 1929.62,
-    "cashSell": 1855.08,
-    "ttSend": 1911.27,
-    "ttReceive": 1873.43,
-    "timestamp": "2026-08-23T23:17:14.033Z"
+    "cashBuy": 1929.98,
+    "cashSell": 1855.42,
+    "ttSend": 1911.62,
+    "ttReceive": 1873.78,
+    "timestamp": "2026-08-23T23:44:15.890Z"
   },
   {
-    "id": "20260821-JPY",
+    "id": "20260824-JPY",
     "countryCode": "JP",
     "currencyName": "일본 엔",
     "currencyCode": "JPY",
-    "rate": 872.57,
-    "date": "2026-08-21",
+    "rate": 872.49,
+    "date": "2026-08-24",
     "type": "bank",
-    "cashBuy": 887.83,
-    "cashSell": 857.31,
-    "ttSend": 881.12,
-    "ttReceive": 864.02,
-    "timestamp": "2026-08-23T23:17:13.865Z"
+    "cashBuy": 887.75,
+    "cashSell": 857.23,
+    "ttSend": 881.04,
+    "ttReceive": 863.94,
+    "timestamp": "2026-08-23T23:44:15.740Z"
   },
   {
-    "id": "20260821-USD",
+    "id": "20260824-USD",
     "countryCode": "US",
     "currencyName": "미국 달러",
     "currencyCode": "USD",
     "rate": 1387,
-    "date": "2026-08-21",
+    "date": "2026-08-24",
     "type": "bank",
     "cashBuy": 1411.27,
     "cashSell": 1362.73,
     "ttSend": 1400.5,
     "ttReceive": 1373.5,
-    "timestamp": "2026-08-23T23:17:13.353Z"
+    "timestamp": "2026-08-23T23:44:15.281Z"
   }
 ]
