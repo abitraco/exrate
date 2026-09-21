@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A React-based exchange rate dashboard that displays daily bank exchange rates (USD, EUR, CNY, JPY) from a pre-built static JSON file. The app is built with Vite, TypeScript, and React 19, using Recharts for visualization.
+A React-based exchange rate dashboard that displays daily bank exchange rates (USD, EUR, CNY, JPY, GBP) from pre-built static JSON files. The app is built with Vite, TypeScript, and React 19, using Recharts for visualization.
 
 ## Key Commands
 
@@ -14,16 +14,18 @@ npm install          # Install dependencies
 npm run dev          # Start dev server (Vite)
 npm run build        # Build for production
 npm run preview      # Preview production build
+npm test             # Run rate-fetching unit tests
 ```
 
 ### Data Management
 ```bash
-npm run build:rates  # Scrape exchange rates from Naver Finance and update public/rates.json
+npm run build:rates  # Fetch 90 days of rates and update public/rates.json
+npm run build:latest # Fetch the latest rates and update public/latest_rates.json
 ```
 
 This command runs [scripts/build-rates.cjs](scripts/build-rates.cjs), which:
-- Scrapes Naver Finance for the last 90 days of exchange rates for USD, EUR, CNY, JPY
-- Parses EUC-KR encoded HTML using cheerio and iconv-lite
+- Fetches the Naver Finance JSON API for the last 90 days of USD, EUR, CNY, JPY, and GBP rates
+- Validates the response schema and paginates with the API's 60-record page limit
 - Writes results to [public/rates.json](public/rates.json)
 - Used by GitHub Actions to auto-update rates every 30 minutes during KST weekdays (06:00-22:00)
 
@@ -33,8 +35,8 @@ This command runs [scripts/build-rates.cjs](scripts/build-rates.cjs), which:
 
 1. **Client-side**: [App.tsx](App.tsx) fetches from `/rates.json` (static file, no live API calls in browser)
 2. **Data fetching**: [services/bankApi.ts](services/bankApi.ts) provides `fetchBankRates()` with memoization
-3. **Scraping**: [scripts/build-rates.cjs](scripts/build-rates.cjs) scrapes Naver Finance to rebuild `rates.json`
-4. **Automation**: [.github/workflows/update-rates.yml](.github/workflows/update-rates.yml) runs the scraper every 30 minutes (KST weekdays 06:00-22:00)
+3. **Rate fetching**: [scripts/naver-rates.cjs](scripts/naver-rates.cjs) validates Naver Finance JSON API responses for the build scripts
+4. **Automation**: [.github/workflows/update-rates.yml](.github/workflows/update-rates.yml) runs the builders every 30 minutes (KST weekdays 06:00-22:00)
 
 ### Component Structure
 
@@ -54,7 +56,7 @@ This command runs [scripts/build-rates.cjs](scripts/build-rates.cjs), which:
 
 ### Key Implementation Details
 
-1. **No live scraping in browser**: Client only reads static `public/rates.json`. All scraping happens server-side via GitHub Actions or manual `npm run build:rates`.
+1. **No live API calls in browser**: Client only reads static `public/rates.json`. Rate fetching happens server-side via GitHub Actions or manual build commands.
 
 2. **Multi-language**: Translation dictionary in [App.tsx](App.tsx:11-71) with `TRANSLATIONS` object for KO/EN.
 
@@ -67,7 +69,7 @@ This command runs [scripts/build-rates.cjs](scripts/build-rates.cjs), which:
 ## Important Notes
 
 - **No customs API**: The codebase no longer uses customs API (mentioned in README)
-- **Naver Finance scraping**: Uses EUC-KR encoding, parses HTML tables with cheerio
+- **Naver Finance API**: Uses the JSON prices endpoint, validates required fields, and retries transient failures
 - **GitHub Actions auth**: Uses `GITHUB_TOKEN` for automated commits ([.github/workflows/update-rates.yml](.github/workflows/update-rates.yml:34-63))
 - **TypeScript strict mode**: Enabled in tsconfig.json with unused variable checks
 - **React 19**: Uses latest React version with new features

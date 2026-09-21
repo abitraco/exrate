@@ -5,6 +5,13 @@ on:
     - cron: "*/30 * * * *" # every 30 minutes
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: update-rates-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-rates:
     runs-on: ubuntu-latest
@@ -43,6 +50,10 @@ jobs:
       - name: Install dependencies
         if: steps.window.outputs.within == 'true'
         run: npm ci
+
+      - name: Test rate builder
+        if: steps.window.outputs.within == 'true'
+        run: npm test
 
       - name: Build rates
         if: steps.window.outputs.within == 'true'
